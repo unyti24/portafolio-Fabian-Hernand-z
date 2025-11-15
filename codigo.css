@@ -10,12 +10,12 @@ html {
 }
 
 body {
-  background-image: url("./imagen_4.jpg");
+   background: linear-gradient(135deg, #f7f9fc, #eef1f5);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  font-family: 'BBH Sans Bogle', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #0a0f0a;
   line-height: 1.8;
 }
@@ -63,14 +63,40 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.acercas {
+/* .acercas {
   background: white;
   border-radius: 0.75rem; 
   text-align: center;
   padding: 1.5rem;
+} */
+ #acerca .acercas {
+  justify-content: flex-start;
+  border-radius: 0.75rem;
+  background: rgb(239, 242, 239);
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.1); 
 }
 
-.galeria {
+.texto-acerca {
+  flex: 1; 
+}
+
+.foto-acerca {
+  width: 14rem; 
+  height: 14rem;
+  object-fit: cover;
+  border-radius: 50%; 
+  border: 0.2rem solid #ddd;
+}
+
+
+/* .galeria {
   display: flex;
   justify-content: center;
   gap: 1.25rem; 
@@ -91,16 +117,54 @@ nav a:hover {
 .mi-foto:hover {
   transform: scale(1.1);
   box-shadow: 0 0 1.5625rem rgba(0,0,0,0.5); 
+} */
+
+.proyectos-section {
+  padding: 2rem 0;
 }
 
-.proyecto {
-  background: rgb(239, 242, 239);
-  padding: 1.25rem; 
-  border-radius: 0.75rem; 
-  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1); 
-  margin-bottom: 1.25rem;
+/* Título */
+.proyectos-title {
   text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #6b0101;
+  font-weight: 700;
 }
+
+
+.proyecto {
+  background: #eff2ef;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;    
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+/* Imagen */
+.proyecto-img {
+  width: 10rem;      
+  height: 10rem;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Texto */
+.proyecto-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.proyecto-info p {
+  font-size: 1rem;
+  color: #333;
+  
+}
+
 
 .intereses {
   display: flex;
@@ -137,44 +201,69 @@ nav a:hover {
 }
 
 
-#contacto {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, rgba(103,188,195,0.2), rgba(255,255,255,0.3));
-  border-radius: 1rem;
-  margin: 3rem auto;
-  max-width: 50rem;
-}
 
-.contacto-caja p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.contacto-links {
+/* Contenedor de íconos */
+.contact-icons {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
+
+/* Íconos */
+.contact-icons .icon {
+  width: 3rem;          /* tamaño uniforme */
+  height: 3rem;
+  object-fit: contain;  /* evita deformaciones */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+/* Hover */
+.contact-icons .icon:hover {
+  transform: scale(1.15);
+}
+
+
+
 .gustos {
+  background: #f5f7fa;
   display: grid;
-  grid-template-columns: repeat(5, 100px);
-  grid-template-rows: repeat(2, 100px);
-  gap: 30px;
+  grid-template-columns: repeat(5, 7.5rem);
+  grid-template-rows: repeat(2, 7.5rem);
+  gap: 1.5rem;
   justify-items: center;
   justify-content: center;
+  padding: 2rem;
+  border-radius: 1.25rem;
 }
+
 .item {
-  background-color: #faf9f8;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 5px 5px 10px rgba(246, 4, 4, 0.2);
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0.25rem 0.65rem rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-weight: 600;
   word-wrap: break-word;
-  font-weight: bold;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.item:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
 .title{
   background-color: #efefef;
   text-align: center;
@@ -185,7 +274,7 @@ nav a:hover {
   background-color: #949390;     
 }
 
-
+/* 
 .btn-contacto {
   background: #67bcc3;
   color: white;
@@ -194,12 +283,12 @@ nav a:hover {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.2s ease;
-}
+} */
 
-.btn-contacto:hover {
+/* .btn-contacto:hover {
   background: #4a9ba0;
   transform: scale(1.05);
-}
+} */
 
 
 footer {
