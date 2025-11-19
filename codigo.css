@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --color-primary: #eef1f5;
+  --color-secondary: #0a0f0a;
+  --color-danger:#f7f9fc;
+  --color-grn: #4c0303;
+}
 
 
 html {
@@ -10,13 +16,13 @@ html {
 }
 
 body {
-   background: linear-gradient(135deg, #f7f9fc, #eef1f5);
+   background: linear-gradient(135deg, var(--color-danger), var(--color-primary));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   font-family: 'Poppins', sans-serif;
-  color: #0a0f0a;
+  color:var(--color-secondary);
   line-height: 1.8;
 }
 
@@ -27,15 +33,22 @@ section {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-image: url(./imagen_5.jpg);
-  color: rgb(1, 0, 0);
+  color: var(--color-secondary);
   padding: 1.25rem 0;
   text-align: center;
+}
+nav {
+  display: flex;
+  gap: 1.5rem;
 }
 
 h1 {
   font-size: 3rem;
-  text-shadow: 0.125rem 0.125rem 0.625rem rgba(0,0,0,0.2);
+  text-shadow: 0.125rem 0.125rem 0.625rem var(--color-secondary);
   letter-spacing: 0.125rem;
   animation: fadeInDown 2s ease;
 }
@@ -46,17 +59,24 @@ h1 {
 
 h2 {
   border-radius: 1.25rem;
-  color: #4c0303;
+  color: var(--color-grn);
   margin-bottom: 1.25rem; 
 }
 
 
 nav a {
-  color: rgb(65, 60, 69);
+  color: var(--color-grn);
   margin: 0 1rem;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
+}
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 nav a:hover {
@@ -72,7 +92,7 @@ nav a:hover {
  #acerca .acercas {
   justify-content: flex-start;
   border-radius: 0.75rem;
-  background: rgb(239, 242, 239);
+  background: var(--color-danger);
   display: flex;
   align-items: center; 
   justify-content: space-between;
@@ -80,7 +100,7 @@ nav a:hover {
   max-width: 62rem;
   margin: 0 auto;
   padding: 2rem;
-  box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.1); 
+  box-shadow:0 0.25rem 0.5rem var(--color-secondary); 
 }
 
 .texto-acerca {
@@ -91,9 +111,17 @@ nav a:hover {
   width: 14rem; 
   height: 14rem;
   object-fit: cover;
-  border-radius: 50%; 
-  border: 0.2rem solid #ddd;
+  border-radius: 60%; 
+  border: 0.2rem solid var(--color-grn);
+  transition: 0.4s;
+  object-position: 50% 20%;
 }
+
+.foto-acerca:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
 
 
 /* .galeria {
@@ -134,7 +162,7 @@ nav a:hover {
 
 
 .proyecto {
-  background: #eff2ef;
+  background: var(--color-primary);
   display: flex;
   align-items: center;
   gap: 1.5rem;    
@@ -164,6 +192,14 @@ nav a:hover {
   color: #333;
   
 }
+.proyecto {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px var(--color-secondary);
+}
 
 
 .intereses {
@@ -175,18 +211,18 @@ nav a:hover {
 }
 
 .interes {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--color-primary);
   border-radius: 1rem;
   padding: 2rem;
   width: 18rem;
   text-align: center;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  box-shadow: 0 0.5rem 1rem var(--color-secondary);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .interes:hover {
   transform: translateY(-0.5rem);
-  box-shadow: 0 1rem 1.5rem rgba(0,0,0,0.2);
+  box-shadow: 0 1rem 1.5rem var(--color-secondary);
 }
 
 .interes h3 {
@@ -196,7 +232,7 @@ nav a:hover {
 }
 .inter {
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--color-danger);
 
 }
 
@@ -229,7 +265,7 @@ nav a:hover {
 
 
 .gustos {
-  background: #f5f7fa;
+  background: var(--color-danger);
   display: grid;
   grid-template-columns: repeat(5, 7.5rem);
   grid-template-rows: repeat(2, 7.5rem);
@@ -241,10 +277,10 @@ nav a:hover {
 }
 
 .item {
-  background: #ffffff;
+  background: var(--color-primary);
   border-radius: 1rem;
   padding: 1rem;
-  box-shadow: 0 0.25rem 0.65rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.65rem var(--color-secondary);
   text-align: center;
   font-weight: 600;
   word-wrap: break-word;
@@ -253,7 +289,7 @@ nav a:hover {
 
 .item:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1.25rem var(--color-secondary);
 }
 
 .title {
@@ -294,7 +330,41 @@ nav a:hover {
 footer {
   text-align: center;
   background: #67bcc3;
-  color: rgb(8, 7, 7);
+  color: var(--color-secondary);
   padding: 1.25rem; 
 }
+
+
+@media (max-width: 768px) {
+
+  /* Mostrar botón hamburguesa */
+  .menu-btn {
+    display: block;
+    color: white; 
+  }
+
+  /* Cambiar nav a menú desplegable */
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Clase que activa el menú */
+  nav.show {
+    display: flex;
+  }
+
+  header {
+    position: relative;
+  }
+}
+
 

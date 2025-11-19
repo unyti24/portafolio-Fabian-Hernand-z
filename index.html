@@ -10,6 +10,7 @@
 <body>
   <header>
     <h1>Fabian Hernandéz</h1>
+      <button class="menu-btn" id="menu-btn">☰</button>
     <nav>
       <a href="#acerca">Acerca de mí</a>
       <a href="#proyectos">Proyectos</a>
@@ -130,5 +131,15 @@
   <footer>
     <p>©2025 Fabian Hernandez | Todos los derechos reservados</p>
   </footer>
+
+  <script>
+  const menuBtn = document.getElementById("menu-btn");
+  const nav = document.querySelector("nav");
+
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
+
 </body>
 </html>
