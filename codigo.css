@@ -17,13 +17,14 @@ html {
 
 body {
 background: conic-gradient(
-  from 0deg,
-  #203046,
-  #2d4d6a,
-  #3e6d8f,
-  #25374b,
-  #203046
-);/* background: linear-gradient(135deg, var(--color-danger), var(--color-primary)); */
+  from 120deg,
+  #2d3e50,
+  #385d8a,
+  #4d8ec7,
+  #3c6da3,
+  #2d3e50
+);
+/* background: linear-gradient(135deg, var(--color-danger), var(--color-primary)); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,12 +42,13 @@ section {
 
 header {
 background: conic-gradient(
-  from 0deg,
-  #3c4658,
-  #4a5970,
-  #56657b,
-  #495163,
-  #3c4658
+  from 180deg,
+  #203040,
+  #2f4f6b,
+  #3d6f92,
+  #4e8ab3,
+  #3a5a77,
+  #203040
 );
   display: flex;
   justify-content: space-between;
@@ -86,6 +88,10 @@ nav a {
   font-weight: 500;
   font-size: 1rem;
 }
+nav a:hover {
+  text-decoration: underline;
+}
+
 .menu-btn {
   display: none;
   background: none;
@@ -94,16 +100,6 @@ nav a {
   cursor: pointer;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* .acercas {
-  background: white;
-  border-radius: 0.75rem; 
-  text-align: center;
-  padding: 1.5rem;
-} */
  #acerca .acercas {
   justify-content: flex-start;
   border-radius: 0.75rem;
@@ -143,31 +139,6 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-
-
-/* .galeria {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem; 
-  flex-wrap: wrap;
-  margin-top: 1.25rem;
-}
-
-.mi-foto {
-  width: 13.75rem;
-  height: 13.75rem;
-  border-radius: 50%;
-  padding: 0.3125rem;
-  background: linear-gradient(45deg, #00f, #f0f);
-  object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mi-foto:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 1.5625rem rgba(0,0,0,0.5); 
-} */
-
 .proyectos-section {
   padding: 2rem 0;
 }
@@ -180,6 +151,7 @@ nav a:hover {
 
 /* Título */
 .proyectos-title {
+  background-color: var(--color-primary);
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -263,42 +235,16 @@ nav a:hover {
 
 }
 
-
-
-/* Contenedor de íconos */
-/* .contact-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 2rem;
-} */
-
-/* Íconos */
-/* .contact-icons .icon {
-  width: 3rem;          /* tamaño uniforme */
- /* height: 3rem; */
-  /* object-fit: contain;  evita deformaciones */
-  /* transition: transform 0.3s ease;
-  cursor: pointer;
-  display: block;
-} */
-
-/* Hover */
-/* .contact-icons .icon:hover {
-  transform: scale(1.15);
-} */
-
-
-
 .gustos {
   background: var(--color-danger);
   display: grid;
-  grid-template-columns: repeat(5, 7.5rem);
-  grid-template-rows: repeat(2, 7.5rem);
+  /* antes estaba fijo, ahora es responsivo */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  /* grid-template-columns: repeat(5, 7.5rem);
+  grid-template-rows: repeat(2, 7.5rem); */
   gap: 1.5rem;
   justify-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 2rem;
   border-radius: 1.25rem;
 }
@@ -310,12 +256,12 @@ nav a:hover {
   box-shadow: 0 0.25rem 0.65rem var(--color-secondary);
   text-align: center;
   font-weight: 600;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item:hover {
-  transform: translateY(-30px);
+  transform: translateY(-15px);
   box-shadow: 0 0.5rem 1.25rem var(--color-secondary);
 }
 
@@ -325,44 +271,21 @@ nav a:hover {
   margin-bottom: 1.5rem;
   color: #333;
   font-weight: 700;
-}
-
-.title{
   background-color: #efefef;
-  text-align: center;
+  /* text-align: center; */
   animation: fadeInDown 2s ease;
 }
-/* .item:hover {
-  transform: translateX(30px); */
-  /* transform: rotateX(180deg); */
-  /* transform: scale(1.1);          
-  background-color: #7a7976;      */
-/* } */
+/*responsive adicional para el tamaño en moviles pequeños*/
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
 
-/* 
-.btn-contacto {
-  background: #67bcc3;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 2rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
-} */
-
-/* .btn-contacto:hover {
-  background: #4a9ba0;
-  transform: scale(1.05);
-} */
-
-
-/* footer {
-  text-align: center;
-  background: #67bcc3;
-  color: var(--color-secondary);
-  padding: 1.25rem; 
-} */
-
+  .item {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
 
 @media (max-width: 768px) {
 
@@ -395,6 +318,101 @@ nav a:hover {
     position: relative;
   }
 }
+
+/* Contenedor del formulario */
+.formulario-contacto {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Más espacio entre grupos */
+}
+
+/* Título del formulario */
+.form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Grupo de cada campo (espaciado consistente) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Label */
+.form-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs y textarea */
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1.5px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus */
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 6px rgba(0, 119, 255, 0.3);
+  outline: none;
+}
+
+/* Botón */
+.btn-enviar {
+  background: #0077ff;
+  color: white;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover botón */
+.btn-enviar:hover {
+  background: #005fcc;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .formulario-contacto {
+    padding: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .formulario-contacto input,
+  .formulario-contacto textarea {
+    padding: 0.7rem;
+  }
+
+  .btn-enviar {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
 
 footer {
   background: #5cc5e5;                          
